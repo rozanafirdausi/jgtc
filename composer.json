@@ -1,0 +1,87 @@
+{
+    "name": "suitmedia/jazz-goes-to-campus-2018",
+    "description": "Jazz Goes To Campus 2018",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.6.4",
+        "laravel/framework": "5.3.16",
+        "laravelcollective/html": "^5.3",
+        "guzzlehttp/guzzle": "^6.1",
+        "intervention/image": "^2.3",
+        "gloudemans/shoppingcart": "^1.3",
+        "maatwebsite/excel": "~2.1.0",
+        "box/spout": "^2.4",
+        "laravel/socialite": "^2.0",
+        "cviebrock/eloquent-sluggable": "^4.0.1",
+        "sentry/sentry-laravel": "^0.7.0",
+        "igaster/laravel-theme": "^1.1",
+        "pda/pheanstalk": "~3.0",
+        "mikehaertl/php-pdftk": "^0.3.2",
+        "jenssegers/rollbar": "^1.5",
+        "richan-fongdasen/eloquent-blameable": "^1.1"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~4.0",
+        "symfony/css-selector": "2.8.*|3.0.*",
+        "symfony/dom-crawler": "2.8.*|3.0.*",
+        "barryvdh/laravel-debugbar": "^2.1",
+        "barryvdh/laravel-elfinder": "^0.3.5",
+        "doctrine/dbal": "^2.5",
+        "orangehill/iseed": "dev-master",
+        "squizlabs/php_codesniffer": "2.6.*",
+        "phpmd/phpmd": "2.4.*",
+        "sebastian/phpcpd": "*",
+        "suitmedia/php-code-standards": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Suitcore\\": "app/Suitcore/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "check-quality": [
+            "! find app -type f -name \"*.php\" -exec php -l {} \\; |  grep -v 'No syntax errors'",
+            "vendor/bin/phpcs --colors --ignore=app/Validator/,app/Suitcore/ --standard=vendor/suitmedia/php-code-standards/Suitmedia/ app/"
+        ],
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+
+        ],
+        "pre-update-cmd": [
+
+        ],
+        "post-update-cmd": [
+
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "repositories": [
+        {
+            "packagist": false
+        },
+        {
+            "type": "composer",
+            "url": "https://packagist.org/"
+        }
+    ]
+}

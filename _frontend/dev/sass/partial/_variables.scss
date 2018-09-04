@@ -1,0 +1,84 @@
+
+// Typography
+// ------------------------------------------------------------------------ //
+
+$base_font_size     : 15px;
+$base_line_height   : 1.5em;
+$base_font_family   : -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+$space              : $base_line_height;
+
+
+
+// Colors
+// ------------------------------------------------------------------------ //
+
+$palettes: (
+	primary: #0094ed,
+    black: #000000,
+    white: #FFFFFF,
+    darkblue: #35405e,
+    lightblue: #82c6e9,
+    skyblue: #8cd1f5,
+    brightblue: #0180b3,
+    maroon: #a83a4f,
+    yellowcream: #f8f2d5,
+    yellowwhite: #f9fad8,
+    yellowdeep: #fcc700,
+    grey: #666666,
+    lightgrey: #cccccc,
+    green: #299e86
+);
+
+@function palette($color) {
+    @if map-has-key($palettes, $color) {
+        @return map-get($palettes, $color);
+    } @else {
+        @warn "key `#{$color}` was not found. Falling back to #222";
+        @return #222;
+    }
+}
+
+$black              : #000;
+$black90            : lighten($black, 10%);
+$black80            : lighten($black, 20%);
+$black70            : lighten($black, 30%);
+$black60            : lighten($black, 40%);
+$black50            : lighten($black, 50%);
+$black40            : lighten($black, 60%);
+$black30            : lighten($black, 70%);
+$black20            : lighten($black, 80%);
+$black10            : lighten($black, 90%);
+
+$link               : #0094ed;
+$link_hover         : darken($link, 10%);
+
+$selection_bg       : #b3d4fc;
+$selection_color    : $black;
+
+
+
+// Break Points
+// ------------------------------------------------------------------------ //
+
+$smallest           : "screen and (max-width: 20em)";
+$small              : "screen and (min-width: 22.5em)";
+$small_portrait     : "screen and (min-width: 22.5em) and (orientation: portrait)";
+$small_landscape    : "screen and (min-width: 22.5em) and (orientation: landscape)";
+
+$medium             : "screen and (min-width: 48em)";
+$medium_portrait    : "screen and (min-width: 48em) and (orientation: portrait)";
+$medium_landscape   : "screen and (min-width: 48em) and (orientation: landscape)";
+
+$large              : "screen and (min-width: 64em)";
+$extra_large        : "screen and (min-width: 80em)";
+$hd                 : "screen and (min-width: 85em)";
+$wide               : "screen and (min-width: 90em)";
+$full_HD            : "screen and (min-width: 120em)";
+
+$retina             : "(-webkit-min-device-pixel-ratio: 1.3),
+                       (min-resolution: 1.25dppx),
+                       (min-resolution: 120dpi)";
+
+// header
+$headerSmall: 68px;
+$headerLarge: 116px;

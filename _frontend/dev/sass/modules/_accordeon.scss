@@ -1,0 +1,68 @@
+.accordeon {
+	counter-reset: accordeon;
+}
+
+.accordeon__item {
+	border-radius: 4px;
+	overflow: hidden;
+	background-color: #FFF;
+
+	&:not(:last-child) {
+		margin-bottom: 16px;
+	}
+}
+
+.btn-accordeon {
+	width: 100%;
+	text-align: left;
+	display: flex;
+	// align-items: center;
+	font-size: (18/16) * 1em;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background: #FFF;
+	white-space: normal;
+
+	&:hover,
+	&:focus {
+		background: palette(yellowwhite);
+	}
+
+	&:before {
+		counter-increment: accordeon;
+		content: 'Q'counter(accordeon)'. ';
+		font-weight: 700;
+		color: palette(yellowdeep);
+		display: inline-block;
+		min-width: 48px;
+	}
+
+	.btn-text {
+		flex-grow: 1;
+		display: inline-block;
+		padding-right: 16px;
+		line-height: 1.2;
+	}
+
+	.btn-icon {
+		position: relative;
+		display: inline-block;
+	}
+
+	.is-active & {
+		background: palette(yellowdeep);
+
+		&:before {
+			color: $black90;
+		}
+
+		.btn-icon {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.accordeon-content {
+	display: none;
+	padding: 16px 24px;
+}

@@ -1,0 +1,245 @@
+/*
+    Colorbox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox {
+    
+}
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden; transform: translate3d(0,0,0);}
+#cboxWrapper {max-width:none;}
+#cboxOverlay{
+    position:fixed; width:100%; height:100%;
+    background: rgba($black,0.7);
+}
+// #cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none; -ms-interpolation-mode:bicubic;}
+.cboxIframe{width:100%; height:100%; display:block; border:0; padding:0; margin:0;}
+// #colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box;}
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+// #cboxOverlay{background:url(../img/overlay.png) repeat 0 0; opacity: 0.9; filter: alpha(opacity = 90);}
+#colorbox{outline:0;}
+    #cboxTopLeft{
+        width:21px; height:21px; 
+        // background:url(../img/controls.png) no-repeat -101px 0;
+    }
+    #cboxTopRight{
+        width:21px; height:21px; 
+        // background:url(../img/controls.png) no-repeat -130px 0;
+    }
+    #cboxBottomLeft{
+        width:21px; height:21px; 
+        // background:url(../img/controls.png) no-repeat -101px -29px;
+    }
+    #cboxBottomRight{
+        width:21px; height:21px; 
+        // background:url(../img/controls.png) no-repeat -130px -29px;
+    }
+    #cboxMiddleLeft{
+        width:21px; 
+        // background:url(../img/controls.png) left top repeat-y;
+    }
+    #cboxMiddleRight{
+        width:21px; 
+        // background:url(../img/controls.png) right top repeat-y;
+        // pointer-events: none;
+    }
+    #cboxTopCenter{
+        height:21px; 
+        // background:url(../img/border.png) 0 0 repeat-x;
+    }
+    #cboxBottomCenter{
+        height:21px; 
+        // background:url(../img/border.png) 0 -29px repeat-x;
+    }
+    #cboxContent{
+        // background: #FFF; 
+        overflow:hidden;
+    }
+        .cboxIframe{background:#fff;}
+        #cboxError{padding:50px; border:1px solid #ccc;}
+        #cboxLoadedContent{
+            // padding-bottom:49px;
+            // background-color: $black;
+        }
+        #cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
+        #cboxCurrent{position:absolute; bottom:4px; left:62px; color:#949494;}
+        #cboxLoadingOverlay{background:url(../img/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(../img/loading.gif) no-repeat center center;}
+
+        /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+        #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
+        
+        /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+        #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
+
+        #cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+
+        #cboxPrevious,
+        #cboxNext {
+            @extend .fa;
+            background: transparent;
+            width:25px;
+            height:25px;
+            border-radius: 50%;
+            color: #FFF;
+            border: 1px solid #FFF;
+
+            &:hover {
+                background: #FFF;
+                color: palette(maroon)
+            }
+        }
+
+        #cboxPrevious {position:absolute;
+            @extend .fa-angle-left;
+            bottom:0;
+            left:0;
+        }
+
+        #cboxNext {
+            @extend .fa-angle-right;
+            position:absolute;
+            bottom:0;
+            left:31px;
+        }
+
+        #cboxClose {
+            position:absolute;
+            bottom:0;
+            right:0;
+            background: transparent;
+            width:25px;
+            height:25px;
+            // text-indent:-9999px;
+            border-radius: 50%;
+
+            @extend .fa;
+            @extend .fa-times;
+            color: #FFF;
+            border: 1px solid #FFF;
+
+            &:hover {
+                background: red;
+            }
+        }
+
+#cboxContent:before {
+    content: '';
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 28px + 42px;
+    left: 0;
+    bottom: 0;
+    background: rgba($black, 0.5);
+    border-radius: 3px;
+    // box-shadow: 0 0 0 5px rgba($black, 0.5);
+}
+
+#cboxTitle,
+#cboxPrevious,
+#cboxNext,
+#cboxSlideshow,
+#cboxLoadingOverlay,
+#cboxLoadingGraphic,
+#cboxClose,
+#cboxCurrent {
+    z-index: 2;
+}
+
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+#colorbox,
+#cboxWrapper,
+#cboxContent,
+#cboxLoadedContent {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#colorbox {
+    top: 0!important;
+}
+
+#cboxWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#cboxContent {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    height: 100%;
+    padding-bottom: 70px;
+}
+
+#cboxclearMain {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-grow: 1;
+    // align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#cboxMiddleLeft,
+#cboxMiddleRight {
+    height: 100%!important;
+    float: none!important;
+}
+
+#cboxclearTop,
+#cboxclearBottom {
+    display: flex;
+}
+
+#cboxTopCenter,
+#cboxBottomCenter {
+    width: 100%!important;
+}
+
+#cboxLoadedContent {
+    // margin-bottom: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible!important;
+}
+
+#cboxLoadedContent .cboxPhoto {
+    margin-top: 0!important;
+    margin: 0;
+}
+
+#cboxLoadedContent img.cboxPhoto {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto!important;
+    height: auto!important;
+}

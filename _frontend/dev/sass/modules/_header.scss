@@ -1,0 +1,283 @@
+.site-header {
+	position: fixed;
+	width: 100%;
+	z-index: 6;
+	top: 0;
+	left: 0;
+	padding: 4px 0;
+	transition: all .3s ease;
+	background: #FFF;
+	border-bottom: 1px solid rgba($black, 0.075);
+
+	.home-container & {
+		background: transparent;
+	}
+	
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-items: center;
+		width: 98%;
+	}
+
+	.site-logo {
+		display: block;
+		width: 60px;
+		transition: all .3s ease;
+		position: relative;
+		z-index: 3;
+	}
+
+	.main-nav {
+		// flex-grow: 1;
+		text-align: right;
+	}
+
+	.site-desc {
+		font-weight: normal;
+		font-size: 14px;
+		text-transform: uppercase;
+		display: none;
+
+		.home-container & {
+			display: none;
+		}
+	}
+
+	.site-action {
+		flex-grow: 1;
+		text-align: right;
+	}
+
+	.btn-buy {
+
+		.home-container & {
+			display: none;
+		}
+	}
+
+	&.is-active {
+		background-color: #FFF;
+		box-shadow: 0 1px 6px rgba($black, 0.2);
+	}
+
+	@media #{$large} {
+		padding: 8px 0 0;
+		overflow-x: hidden;
+		border-bottom: none;
+
+		.container {
+			width: 90%;
+
+			.home-container & {
+			flex-wrap: nowrap;
+		}
+		}
+
+		.site-desc {
+			// flex-grow: 1;
+			display: block;
+			margin: 0;
+			width: 50%;
+		}
+
+		.site-action {
+			flex-grow: 1;
+			text-align: right;
+		}
+
+		.site-logo {
+			width: 100px;
+		}
+
+		&.is-active .site-logo {
+			width: 60px;
+		}
+	}
+}
+
+.main-nav {
+	font-weight: $semi-bold;
+	justify-self: flex-end;
+
+	a {
+		color: $black80;
+	}
+
+	a:hover {
+		color: palette(maroon);
+	}
+
+	.btn-mainnav {
+		font-size: 24px;
+		width: 50px;
+		height: 50px;
+		border: none;
+		background: none;
+		position: relative;
+		z-index: 2;
+
+		@media #{$large} {
+			display: none;
+		}
+	}
+
+	.btn-mainnav .btn-icon {
+		@include absoluteCenter();
+		transition: opacity .3s ease;
+	}
+
+	.btn-mainnav .btn-icon--close {
+		opacity: 0;
+	}
+
+	.primary-nav {
+		display: flex;
+		text-transform: uppercase;
+		flex-direction: column;
+		padding: 0 60px;
+	}
+
+	.social-nav {
+		text-align: center;
+		
+		.social-nav__item {
+			display: inline-block;
+		}
+
+		.social-nav__item a {
+			display: block;
+			padding: 8px 12px;
+		}
+
+		.home-container & {
+			display: none;
+		}
+	}
+
+	.primary-nav__item {
+		flex: 1 auto;
+		text-align: center;
+
+		a {
+			display: block;
+			padding: 8px 4px;
+		}
+	}
+
+	.toggle-panel {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 0vh;
+		// padding-top: 68px;
+		pointer-events: none;
+		overflow: hidden;
+		transition: all .2s ease;
+		opacity: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		&:before {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			// top: 68px;
+			left: 0;
+			background: darken(#f8f2d5, 5%);
+		}
+
+		.primary-nav, .social-nav {
+			position: relative;
+			pointer-events: auto;
+			z-index: 2;
+		}
+	}
+
+	&.is-active {
+		.toggle-panel {
+			height: 100vh;
+			opacity: 1;
+		}
+
+		.btn-mainnav .btn-icon--close {
+			opacity: 1;
+		}
+
+		.btn-mainnav .btn-icon--open {
+			opacity: 0;
+		}
+
+		.primary-nav {
+			overflow-y: auto;
+		}
+	}
+
+	@media #{$large} {
+		width: 100%;
+		position: relative;
+		height: 42px;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 100vw;
+			height: 42px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			background-color: $black10;
+			transform: translateX(-50vw);
+		}
+
+		.primary-nav {
+			flex-direction: row;
+			width: 100%;
+			position: relative;
+			z-index: 2;
+			padding: 0;
+		}
+
+		.social-nav {
+			white-space: nowrap;
+			position: relative;
+			z-index: 2;
+
+			.social-nav__item a {
+				padding: 4px 6px;
+			}
+		}
+
+		.toggle-panel {
+			position: relative;
+			pointer-events: auto;
+			opacity: 1;
+			height: auto;
+			padding-top: 0;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;			
+
+			&:before {
+				display: none;
+			}
+		}
+
+		.home-container & {
+			// width: auto;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
+.home-container .site-header {
+
+}

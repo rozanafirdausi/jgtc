@@ -1,0 +1,32 @@
+.toggle-nav {
+	[data-toggle] {
+		cursor: pointer;
+	}
+
+	.toggle-panel {
+
+	}
+}
+
+.filter-box__title {
+
+}
+
+.filter-box__content {
+	max-height: 0;
+	overflow: hidden;
+	padding-top: 0px;
+	transition: padding .5s ease, max-height .3s ease;
+
+	&.is-active {
+		padding-top: 16px;
+		max-height: 100vh;
+		overflow-y: auto;
+	}
+
+	@media #{$medium} {
+		padding-top: 16px;
+		max-height: none;
+		overflow: visible;
+	}
+}

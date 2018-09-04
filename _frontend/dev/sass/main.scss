@@ -1,0 +1,126 @@
+/*! [PROJECT_NAME] | Suitmedia */
+
+//	1. Font-face
+//	2. Basic styles
+//	3. Header
+//	4. Page styles
+//	5. Footer
+
+@import "partial/normalize";
+@import "partial/variables";
+@import "partial/resets";
+@import "partial/helpers";
+@import "partial/print";
+
+@import "mixin/mixin";
+@import "modules/modules";
+@import "plugin/plugin";
+
+// 1 Font-face
+// ------------------------------------------------------------------------ //
+$font-primary: 'montserrat', sans-serif;
+$font-secondary: 'Dream Orphans', 'Roboto Condensed', 'Arial Narrow', sans-serif;
+.font-primary {
+    font-family: $font-primary;
+}
+.font-secondary {
+    font-family: $font-secondary;
+}
+
+
+// 2 Basic styles
+// ------------------------------------------------------------------------ //
+html, body {
+    height: 100%;
+}
+html {
+    font: 400 $base_font_size $font-primary;
+    line-height: $base_line_height;
+    letter-spacing: .02em;
+}
+
+body {
+    text-decoration-skip: ink;
+    color: $black90;
+}
+
+a {
+	color: $link;
+	text-decoration: none;
+
+	&:hover,
+    &:focus {
+		color: $link_hover;
+	}
+}
+
+button {
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.block {
+    margin-bottom: $space;
+}
+
+.block-half {
+    margin-bottom: ($space / 2);
+}
+
+.container {
+    width: 90%;
+    max-width: 580px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 60em) {
+        max-width: 800px;
+    }
+    
+    @media #{$large} {
+        max-width: 960px;
+    }
+
+    @media #{$wide} {
+        max-width: 1280px;
+    }
+}
+
+.container--medium {
+    max-width: 520px;
+}
+
+// 3 Header
+// ------------------------------------------------------------------------ //
+@import "modules/header";
+
+// 4 Page styles
+// ------------------------------------------------------------------------ //
+.site-main {
+    padding-top: $headerSmall;
+    width: 100%;
+    overflow-x: hidden;
+
+    @media #{$large} {
+        padding-top: $headerLarge + 32px;
+
+        .home-container & {
+            padding-top: $headerLarge;
+        }
+    }
+}
+
+.main--page {
+    background-color: #FFF;
+    background-image: url('../img/bg-bottom-page.jpg');
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 40px;
+}
+
+// 5 Footer
+// ------------------------------------------------------------------------ //
+@import "modules/footer";

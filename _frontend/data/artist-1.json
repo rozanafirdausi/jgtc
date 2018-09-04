@@ -1,0 +1,123 @@
+[
+  {
+    "photos": [
+      {
+        "id": "photo_0",
+        "thumbnail": "http://via.placeholder.com/180",
+        "detail": "http://via.placeholder.com/1273x797"
+      },
+      {
+        "id": "photo_1",
+        "thumbnail": "http://via.placeholder.com/180",
+        "detail": "http://via.placeholder.com/1266x797"
+      },
+      {
+        "id": "photo_2",
+        "thumbnail": "http://via.placeholder.com/180",
+        "detail": "http://via.placeholder.com/1269x797"
+      },
+      {
+        "id": "photo_3",
+        "thumbnail": "http://via.placeholder.com/180",
+        "detail": "http://via.placeholder.com/1267x794"
+      },
+      {
+        "id": "photo_4",
+        "thumbnail": "http://via.placeholder.com/180",
+        "detail": "http://via.placeholder.com/1266x792"
+      },
+      {
+        "id": "photo_5",
+        "thumbnail": "http://via.placeholder.com/180",
+        "detail": "http://via.placeholder.com/1263x799"
+      },
+      {
+        "id": "photo_6",
+        "thumbnail": "http://via.placeholder.com/180",
+        "detail": "http://via.placeholder.com/1270x796"
+      },
+      {
+        "id": "photo_7",
+        "thumbnail": "http://via.placeholder.com/180",
+        "detail": "http://via.placeholder.com/1272x791"
+      },
+      {
+        "id": "photo_8",
+        "thumbnail": "http://via.placeholder.com/180",
+        "detail": "http://via.placeholder.com/1278x799"
+      },
+      {
+        "id": "photo_9",
+        "thumbnail": "http://via.placeholder.com/180",
+        "detail": "http://via.placeholder.com/1264x791"
+      },
+      {
+        "id": "photo_10",
+        "thumbnail": "http://via.placeholder.com/180",
+        "detail": "http://via.placeholder.com/1262x794"
+      }
+    ],
+    "videos": [
+      {
+        "id": "video_0",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      },
+      {
+        "id": "video_1",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      },
+      {
+        "id": "video_2",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      },
+      {
+        "id": "video_3",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      },
+      {
+        "id": "video_4",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      },
+      {
+        "id": "video_5",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      },
+      {
+        "id": "video_6",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      },
+      {
+        "id": "video_7",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      },
+      {
+        "id": "video_8",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      },
+      {
+        "id": "video_9",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      },
+      {
+        "id": "video_10",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      },
+      {
+        "id": "video_11",
+        "thumbnail": "http://via.placeholder.com/320x180",
+        "detail": "https://www.youtube.com/embed/kk0WRHV_vt8?rel=0&wmode=transparent"
+      }
+    ]
+  }
+]

@@ -1,0 +1,90 @@
+.section-lineup {
+	// overflow-x: hidden;
+}
+
+.line-up-carousell {
+	max-width: 90%;
+	margin: auto;
+	display: none;
+
+	&.slick-slider {
+		display: block;
+	}
+
+	// .slick-dots {
+	// 	display: none;
+
+	// 	@media #{$medium} {
+	// 		display: block;
+	// 	}
+	// }
+
+	.slick-list {
+		overflow: visible;
+		margin-bottom: 16px;
+	}
+	
+	.carousell__item {
+		
+	}
+}
+
+.artist__item {
+	// width: 225px;
+	background: $black10;
+	border-radius: 4px;
+	overflow: hidden;
+	position: relative;
+	// padding-bottom: (3/4) * 100%;
+
+	.fig-img {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			max-width: none;
+		}
+	}
+
+	.fig-img .view-detail {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: rgba(palette(maroon), 0.4);
+		opacity: 0;
+	}
+
+	figcaption {
+		position: absolute;
+		top: auto;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+		padding: 8px;
+		background: linear-gradient(to top, rgba($black, 0.3), rgba($black, 0));
+	}
+
+	&:hover {
+		.fig-img .view-detail {
+			opacity: 1;
+		}
+	}
+
+	&:not(:first-child) {
+		display: none;
+
+		&.slick-slide {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+
+.flexbox {
+
+    .flex {
+        display: flex;
+    }
+
+    .flex--wrap {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .v-center {
+        align-items: center;
+    }
+
+    .v-bottom {
+        align-items: flex-end;
+    }
+
+    .h-center {
+        justify-content: center;
+    }
+
+    .v-center--spread {
+        justify-content: space-between;
+    }
+
+    .fg-1 {
+        flex-grow: 1;
+    }
+
+    .fs-0 {
+        flex-shrink: 0;
+    }
+}

@@ -1,0 +1,62 @@
+.tickets {
+	height: 100%;
+	position: relative;
+
+	.ticket-icon {
+		margin-top: (56/2) * -1px;
+		margin-bottom: 16px;
+	}
+
+	a {
+		background-color: #FFF;
+		border-radius: 4px;
+		border: 2px solid palette(lightgrey);
+	}
+
+	a .label-action {
+		border-radius: 0 0 2px 2px;
+	}
+
+	a:hover {
+		border-color: palette(maroon);
+
+		.label-action {
+			background-color: palette(maroon);
+		}
+	}
+}
+
+.ticket--sold {
+	
+
+	a {
+		pointer-events: none;
+	}
+
+	> * *:not(.label-action) {
+		color: $black30;
+	}
+
+	.label-sold {
+		position: absolute;
+		display: block;
+		padding: 8px;
+		width: 100%;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #FFF;
+		font-weight: 900;
+		font-size: (24/16) * 1em;
+		background: $black50;
+	}
+
+	.ticket-content {
+		filter: blur(2px);
+	}
+
+	.label-action > strong {
+		filter: blur(2px);
+		color: #FFF;
+	}
+}

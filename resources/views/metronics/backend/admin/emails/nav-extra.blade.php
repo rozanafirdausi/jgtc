@@ -1,0 +1,2 @@
+<li{!! Route::current()->getName() == 'backend.email.show' ? ' class="active"' : '' !!}><a href="{{route('backend.email.show', ['id'=>$email->id])}}">View</a></li>
+<li{!! Route::current()->getName() == 'backend.email.edit' ? ' class="active"' : '' !!}><a href="{{route('backend.email.edit', ['id'=>$email->id])}}">Update</a></li>

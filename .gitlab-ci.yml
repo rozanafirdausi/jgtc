@@ -1,0 +1,9 @@
+image: phpdockerio/php72-fpm
+
+before_script:
+  - composer self-update --quiet
+  - composer install --quiet
+
+code-quality:
+  script:
+    - composer check-quality

@@ -1,0 +1,101 @@
+.page-head {
+    position: relative;
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        width: 100px;
+        height: ((100*130)/370)*1px;
+        background-position: 100% 0;
+        background-size: cover;
+    }
+
+    &:before {
+        left: 0;
+        background-image: url('../img/bg-flags.png');
+    }
+
+    &:after {
+        background-image: url('../img/bg-flags-right.png');
+        right: 0;
+    }
+
+    @media #{$medium} {
+        &:before,
+        &:after {
+            width: 150px;
+            height: ((150*130)/370)*1px;
+        }
+    }
+
+    @media #{$extra_large} {
+        &:before,
+        &:after {
+            width: 300px;
+            height: ((300*130)/370)*1px;
+        }
+    }
+}
+
+.page-head__title {
+    position: relative;
+    z-index: 2;
+    padding-top: 40px;
+
+    .main-title {
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            border-top: 1px solid $black20;
+        }
+
+        span {
+            background: #FFF;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+            padding: 0 15px;
+        }
+
+        span:before,
+        span:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            background-position: center;
+            background-size: cover;
+            width: 116px;
+            height: 76px;
+            transform: translateY(-100%);
+        }
+
+        span:before {
+            background-image: url('../img/sky-bird-left.png');
+            width: 60px;
+            height: ((60*76)/116)*1px;
+            left: -30px;
+        }
+
+        span:after {
+            background-image: url('../img/sky-bird.png');
+            width: 80px;
+            height: ((80*76)/116)*1px;
+            right: -40px;
+        }
+    }
+
+    @media #{$medium} {
+        
+    }
+}

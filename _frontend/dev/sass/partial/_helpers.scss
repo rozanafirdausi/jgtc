@@ -1,0 +1,310 @@
+
+// List helper
+// ------------------------------------------------------------------------ //
+
+.list-nostyle {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list-inline > li {
+    display: inline-block;
+}
+
+
+// Typography helper
+// ------------------------------------------------------------------------ //
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-ellipsis {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.text-caps {
+    text-transform: uppercase;
+}
+
+.text-line-small {
+    line-height: 1.2;
+}
+
+.text-line-smaller {
+    line-height: 1.5;
+}
+
+.font-lite {
+    font-weight: 300;
+}
+
+.font-normal {
+    font-weight: 400;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-extrablold {
+    font-weight: 800;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.space-minus {
+    letter-spacing: -0.12em;
+}
+
+// Visual helper
+// ------------------------------------------------------------------------ //
+
+.clearfix:after,
+.cf:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visuallyhidden,
+.sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    &.focusable:active,
+    &.focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.no-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
+.no-space {
+    margin: 0;
+    padding: 0;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.is-block {
+    display: block;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.rounded {
+    border-radius: 4px;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.shadow {
+    box-shadow: 0 2px 8px rgba($black, 0.2);
+}
+
+$gaps: 0, 2, 4, 8, 12, 16, 20, 24, 32, 36, 48, 64;
+
+@each $gap in $gaps {
+    .mb-#{$gap} { margin-bottom: $gap * 1px !important; }
+    .mr-#{$gap} { margin-right: $gap * 1px !important; }
+    .ml-#{$gap} { margin-left: $gap * 1px !important; }
+    .mt-#{$gap} { margin-top: $gap * 1px !important; }
+
+    .p-#{$gap} { padding: $gap * 1px !important; }
+    .pb-#{$gap} { padding-bottom: $gap * 1px !important; }
+    .pr-#{$gap} { padding-right: $gap * 1px !important; }
+    .pl-#{$gap} { padding-left: $gap * 1px !important; }
+    .pt-#{$gap} { padding-top: $gap * 1px !important; }
+}
+
+@mixin linkColor($color) {
+    color: palette($color)!important;
+
+    &:hover {
+        color: darken(palette($color), 8%)!important;
+    }
+}
+
+@mixin textColor($color) {
+    color: palette($color)!important;
+}
+
+.text-primary {
+    @include textColor(primary);
+}
+.text-black {
+    @include textColor(black);
+}
+.text-white {
+    @include textColor(white);
+}
+.text-darkblue {
+    @include textColor(darkblue);
+}
+.text-lightblue {
+    @include textColor(lightblue);
+}
+.text-skyblue {
+    @include textColor(skyblue);
+}
+.text-brightblue {
+    @include textColor(brightblue);
+}
+.text-maroon {
+    @include textColor(maroon);
+}
+.text-yellowcream {
+    @include textColor(yellowcream);
+}
+.text-yellowwhite {
+    @include textColor(yellowwhite);
+}
+.text-yellowdeep {
+    @include textColor(yellowdeep);
+}
+.text-grey {
+    @include textColor(grey);
+}
+.text-lightgrey {
+    @include textColor(lightgrey);
+}
+.text-green {
+    @include textColor(green);
+}
+
+.link-primary {@include linkColor(primary);}
+.link-black {@include linkColor(black);}
+.link-white {@include linkColor(white);}
+.link-darkblue {@include linkColor(darkblue);}
+.link-lightblue {@include linkColor(lightblue);}
+.link-skyblue {@include linkColor(skyblue);}
+.link-brightblue {@include linkColor(brightblue);}
+.link-maroon {@include linkColor(maroon);}
+.link-yellowcream {@include linkColor(yellowcream);}
+.link-yellowwhite {@include linkColor(yellowwhite);}
+.link-yellowdeep {@include linkColor(yellowdeep);}
+.link-grey {@include linkColor(grey);}
+.link-lightgrey {@include linkColor(lightgrey);}
+.link-green {@include linkColor(green);}
+
+// .primary
+// .black
+// .white
+// .darkblue
+// .lightblue
+// .skyblue
+// .brightblue
+// .maroon
+// .yellowcream
+// .yellowwhite
+// .yellowdeep
+// .grey
+// .lightgrey
+// .green
+
+// @each $state, $color in $palettes {
+//     .text-#{$state},
+//     .link-#{$state} {
+//         color: $color!important;
+//     }
+
+//     .link-#{$state}:hover {
+//         color: darken($color, 8%);
+//     }
+// }
+
+.link-white:hover {
+    color: palette(skyblue)!important;
+}
+
+// @each $bg, $color in $palettes {
+//     .bg-#{$bg} {
+//         background-color: $color;
+//     }
+// }
+
+.bg-primary { background-color: palette(primary); }
+.bg-black { background-color: palette(black); }
+.bg-white { background-color: palette(white); }
+.bg-darkblue { background-color: palette(darkblue); }
+.bg-lightblue { background-color: palette(lightblue); }
+.bg-skyblue { background-color: palette(skyblue); }
+.bg-brightblue { background-color: palette(brightblue); }
+.bg-maroon { background-color: palette(maroon); }
+.bg-yellowcream { background-color: palette(yellowcream); }
+.bg-yellowwhite { background-color: palette(yellowwhite); }
+.bg-yellowdeep { background-color: palette(yellowdeep); }
+.bg-grey { background-color: palette(grey); }
+.bg-lightgrey { background-color: palette(lightgrey); }
+.bg-green { background-color: palette(green); }
+
+@mixin absoluteCenter() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// HR line
+hr.line-2 {
+    border-top-width: 2px;
+}
+.line-dot {
+    border-top-color: $black20;
+    border-top-style: dotted;
+}
